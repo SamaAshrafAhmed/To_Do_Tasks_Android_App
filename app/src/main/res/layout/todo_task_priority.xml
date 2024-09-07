@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="ToDo"
+            type="com.example.to_dolist.ToDoTask" />
+
+    </data>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/task_cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:strokeWidth="3dp"
+        app:strokeColor="@color/darkRed"
+        app:cardCornerRadius="5dp"
+
+
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="115dp"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="16dp"
+            android:background="@color/white"
+            >
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/task_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{ToDo.title}"
+                android:textColor="@color/darkRed"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="40dp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Title" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/task_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:lines="1"
+                android:text="@{ToDo.task}"
+                android:textColor="@color/lightRed"
+                android:textSize="16sp"
+                app:flow_wrapMode="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/task_name"
+                app:layout_constraintTop_toBottomOf="@id/task_name"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel leo nisl. Nunc viverra aliquet sollicitudin. Donec nec rhoncus enim. Vivamus commodo augue at elit facilisis euismod. Quisque pharetra tellus et sapien dignissim elementum. Suspendisse potenti. Nulla eleifend libero in urna luctus fermentum."
+                />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/done_task"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/darkRed"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/task_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:checked="false"/>
+
+            <View
+                android:id="@+id/priority_view"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@color/darkRed"
+                />
+
+            <ImageView
+                android:id="@+id/edit_task"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/edit_icon_2"
+                app:tint="@color/darkRed"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginEnd="30dp"/>
+            <ImageView
+                android:id="@+id/delete_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/delete_task_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                app:tint="#9B1126" />
+            <ImageView
+                android:id="@+id/done_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/done_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/darkRed" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

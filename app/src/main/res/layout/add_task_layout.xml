@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:strokeColor="@color/lightGreen"
+    app:strokeWidth="5dp"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="0dp"
+
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:background="@color/white"
+        >
+<!--    <TextView-->
+<!--        android:id="@+id/title"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+<!--        android:text="@string/new_task"-->
+<!--        android:textColor="@color/darkGreen"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+
+<!--        />-->
+
+    <EditText
+        android:id="@+id/task_name_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:hint="@string/task_name"
+        android:textColor="@color/lightGreen"
+        android:textColorHint="@color/lightGreen"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+    <EditText
+        android:id="@+id/task_content_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:hint="@string/task_details"
+        android:textColor="@color/lightGreen"
+        android:textColorHint="@color/lightGreen"
+        app:layout_constraintTop_toBottomOf="@id/task_name_et" />
+        <CheckBox
+            android:id="@+id/high_priority_chbox"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:buttonTint="@color/darkRed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/task_content_et" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:gravity="center_vertical"
+            android:text="High Priority Task"
+            android:textColor="@color/darkRed"
+            app:layout_constraintBottom_toBottomOf="@id/high_priority_chbox"
+            app:layout_constraintStart_toEndOf="@id/high_priority_chbox"
+            app:layout_constraintTop_toBottomOf="@id/task_content_et" />
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="8dp"
+          android:gravity="center"
+          android:orientation="horizontal"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/high_priority_chbox">
+          <Button
+              android:id="@+id/add_btn"
+              android:layout_width="100dp"
+              android:layout_height="wrap_content"
+              android:layout_marginHorizontal="26dp"
+              android:backgroundTint="@color/lightGreen"
+              android:text="Save"
+              android:textColor="@color/white" />
+          <Button
+              android:id="@+id/cancel_btn"
+              android:layout_width="100dp"
+              android:layout_height="wrap_content"
+              android:layout_marginHorizontal="26dp"
+              android:backgroundTint="#B12637"
+              android:text="Cancel"
+              android:textColor="@color/white" />
+      </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
